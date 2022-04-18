@@ -1,0 +1,23 @@
+Server:
+  port: 8082
+
+spring:
+  profiles:
+    active: dev
+---
+
+spring:
+  profiles: dev
+  h2:
+    console:
+      enabled: 'true'
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:schooldb
+    driverClassName: org.h2.Driver
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
